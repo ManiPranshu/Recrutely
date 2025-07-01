@@ -1,21 +1,21 @@
 import { useState } from 'react'
 import './App.css'
-import Login from './Login.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import {Register} from './pages/register.jsx'
 
-function App(){
-  return(
+function App() {
+
+
+  return (
     <>
-    <Router>
-      <Routes>
-        <Route path='/' element={<Login/>} />
-        <Route path="/forgot-password" element={<Login/>} />
+      <Router>
+        <Routes>
+          <Route path='/' element={<Register />} />
 
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
     </>
   )
 }
 
-export default App;
-
+export default App
