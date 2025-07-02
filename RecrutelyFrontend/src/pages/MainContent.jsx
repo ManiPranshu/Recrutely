@@ -1,6 +1,6 @@
 
 import './MainContent.css'; 
-import companyLogo from "/assets/moon.png";
+import companyLogo from "/assets/google.png";
 import Applications from "./Application.jsx"; 
 import docIcon from "/assets/application.png";          
 import rejectedIcon from "/assets/totaljob.png"; 
@@ -98,7 +98,7 @@ const JobDescription = () => {
           <h3 className="company-name">Google Inc.</h3>
           <p><strong>Industry:</strong> Technology</p>
           <p><strong>Company Size:</strong> 10,000+ Employees</p>
-          <button className="visit-button">Visit Website</button>
+          <button className="visit-button"   onClick={() => window.open("https://www.google.com/about/careers/applications/", "_blank")}>Visit Website</button>
           <h4>About Company</h4>
           <p className="about-text">
             Google is a multinational technology company that specializes in Internet-related
@@ -176,6 +176,10 @@ const Joblist = () => {
 
   );
 };
+
+
+
+
 
 const MainContent = () => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Application.css"; // Ensure the path is correct
 import resumeIcon from "/assets/bell.png"; // Replace with your actual icon path
 
