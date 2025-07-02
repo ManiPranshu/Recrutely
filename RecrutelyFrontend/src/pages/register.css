@@ -1,0 +1,295 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* y our dark background */
+  height: auto;
+}
+
+.register-d {
+  height:100vh;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center vertically */
+  width: 100vw;
+}
+
+
+/* Header */
+.recrutely {
+  background-color: #334e68;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 900px;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  
+}
+
+.text-wrapper {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Register form box */
+.reg-box {
+  height:80vh;
+  background-color: #fff;
+  border: 1px solid #B2ABAB;
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+
+/* Inputs */
+.input {
+    min-height: 2.5rem;
+  height: 3rem;
+  border: 1px solid #B2ABAB;
+  border-radius: 1.5rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: #334e68;
+  background-color: #fff;
+  margin-top: -0.5rem;;
+}
+
+/* Role buttons */
+.role-selection {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.role-box {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #B2ABAB;
+  border-radius: 1.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334e68;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.role-box:hover {
+  background-color: #334e68;
+  color: #fff;
+}
+
+/* Active (clicked) role box */
+.role-box.active {
+  background-color: #334e68;
+  color: #fff;
+  border: 1px solid #334e68;
+}
+
+
+/* Register button */
+.register-btn {
+  background-color: #334e68;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  height: 3.5rem;
+  border: 1px solid #215484;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Google and "or" section */
+.or-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.google-img {
+  background-image: url('/assets/google.png');
+  background-size: cover;
+  background-position: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Login redirect */
+.tologin {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  gap: .5rem;
+}
+
+.text-wrapper-6 {
+  color: #000;
+}
+
+.text-wrapper-7 {
+  /* color: #334e68;
+  cursor: pointer; */
+  text-decoration: none;
+}
+
+/* Register heading */
+.text-wrapper-8 {
+    margin-top: -0.2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #334e68;
+  text-align: center;
+}
+
+/* OR text */
+.text-wrapper-9 {
+  font-size: 1.2rem;
+  color: #334e68;
+}
+
+
+/* -------------------------------- */
+/* 🖥️ Desktop / Laptop (>= 1025px) */
+@media (min-width: 1024px) {
+  .register-d {
+    padding: 2.5rem;
+  }
+
+  .recrutely {
+    max-width: 1000px;
+    height: 4.5rem;
+  }
+
+  .text-wrapper {
+    font-size: 2.5rem;
+  }
+
+  .reg-box {
+    padding: 2.5rem;
+    max-width: 650px;
+    gap: 1.8rem;
+  }
+
+  .input,
+  .role-box,
+  .register-btn {
+    font-size: 1.2rem;
+    height: 3.5rem;
+  }
+
+  .text-wrapper-8 {
+    font-size: 2.2rem;
+  }
+
+  .text-wrapper-9 {
+    font-size: 1.4rem;
+  }
+
+  .tologin {
+    font-size: 1.1rem;
+  }
+}
+
+/* -------------------------------- */
+/* 📱 Mobile (<= 600px) */
+@media (max-width: 600px) {
+  .register-d {
+    padding: 0.5rem;
+  }
+
+  .recrutely {
+    height: 3rem;
+  }
+
+  .text-wrapper {
+    font-size: 1.5rem;
+  }
+
+  .reg-box {
+    padding: 1.2rem;
+    gap: 1rem;
+    min-width: 90vw;
+  }
+
+  .input,
+  .role-box,
+  .register-btn {
+    font-size: 0.9rem;
+    height: 2.5rem;
+  }
+
+  .text-wrapper-8 {
+    font-size: 1.5rem;
+  }
+
+  .text-wrapper-9 {
+    font-size: 1rem;
+  }
+
+  .tologin {
+    font-size: 0.9rem;
+  }
+}
+
+/* -------------------------------- */
+/* 💻 Tablet (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .register-d {
+    padding: 2rem;
+  }
+
+  .recrutely {
+    height: 4rem;
+  }
+
+  .text-wrapper {
+    font-size: 2rem;
+  }
+
+  .reg-box {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .input,
+  .role-box,
+  .register-btn {
+    font-size: 1.1rem;
+    height: 3rem;
+  }
+
+  .text-wrapper-8 {
+    font-size: 2rem;
+  }
+
+  .text-wrapper-9 {
+    font-size: 1.2rem;
+  }
+}
