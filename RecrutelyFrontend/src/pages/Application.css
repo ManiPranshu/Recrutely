@@ -1,0 +1,82 @@
+.applications-container {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.applications-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.applications-subtitle {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.history-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.applications-table th,
+.applications-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 1rem;
+}
+
+.job-cell {
+  font-weight: 600;
+}
+
+.status {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #e2e8a0;
+  color: #475569;
+}
+
+.status-rejected {
+  background-color: #f87171;
+  color: white;
+}
+
+.status-shortlist {
+  background-color: #86efac;
+  color: #14532d;
+}
+
+.view-resume {
+  color: #3b82f6;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.resume-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+

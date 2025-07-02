@@ -53,7 +53,7 @@ export const Register = () => {
           <Link to='/login' className="text-wrapper-7">
           Log In
           </Link>
-          {/* <span className="text-wrapper-7">Log In</span> */}
+        
         </div>
       </main>
     </div>
