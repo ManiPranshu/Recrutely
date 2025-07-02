@@ -1,13 +1,10 @@
-import React from "react";
+
 import './MainContent.css'; 
 import companyLogo from "/assets/moon.png";
 import Applications from "./Application.jsx"; 
-
-
-
-import docIcon from "/assets/application.png";         // Replace with actual path to blue document icon
-import rejectedIcon from "/assets/totaljob.png"; // Replace with red X icon
-import shortlistedIcon from "/assets/shortlist.png"; // Replace with green check icon
+import docIcon from "/assets/application.png";          
+import rejectedIcon from "/assets/totaljob.png"; 
+import shortlistedIcon from "/assets/shortlist.png"; 
 
 const ApplicationStats = () => {
   const stats = [

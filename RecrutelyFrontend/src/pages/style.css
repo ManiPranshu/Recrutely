@@ -52,8 +52,9 @@
 }
 
 .app-container.sidebar-open .main-area  {
-  margin-left: 220px;
-  width: calc(100% - 220px);
+  margin-left: 16.75vw;
+  /* width: calc(100% - 220px); */
+  width: 86.25vw;
 }
 
 
