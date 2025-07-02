@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom"
 import "./register.css";
 
 export const Register = () => {
@@ -49,7 +50,10 @@ export const Register = () => {
 
         <div className="tologin">
           <span className="text-wrapper-6">Already have an account?</span>
-          <span className="text-wrapper-7">Log In</span>
+          <Link to='/login' className="text-wrapper-7">
+          Log In
+          </Link>
+          {/* <span className="text-wrapper-7">Log In</span> */}
         </div>
       </main>
     </div>

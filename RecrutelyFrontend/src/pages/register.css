@@ -4,12 +4,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1e1e1e; /* your dark background */
+  background-color: white; /* y our dark background */
   height: auto;
 }
 
 .register-d {
-    height:100vh;
+  height:100vh;
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 1rem;
@@ -135,13 +135,18 @@ body {
   background-position: center;
   height: 2.5rem;
   width: 2.5rem;
+  border: none;
+  cursor: pointer;
 }
 
 /* Login redirect */
 .tologin {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  align-items: center;
+  justify-content: center;
   font-size: 1rem;
+  gap: .5rem;
 }
 
 .text-wrapper-6 {
@@ -149,8 +154,9 @@ body {
 }
 
 .text-wrapper-7 {
-  color: #334e68;
-  cursor: pointer;
+  /* color: #334e68;
+  cursor: pointer; */
+  text-decoration: none;
 }
 
 /* Register heading */
