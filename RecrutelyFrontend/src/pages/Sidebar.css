@@ -1,8 +1,8 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -13.75vw; /* hidden by default */
-  width: 13.75vw;
+  left: -16.75vw; /* hidden by default */
+  width: 16.75vw;
   height: 100vh;
   background-color: #334E68;
   color: #fff;
