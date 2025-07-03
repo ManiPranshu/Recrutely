@@ -1,10 +1,11 @@
-
+import React, { useState } from "react";
 import './MainContent.css'; 
 import companyLogo from "/assets/google.png";
 import Applications from "./Application.jsx"; 
 import docIcon from "/assets/application.png";          
 import rejectedIcon from "/assets/totaljob.png"; 
 import shortlistedIcon from "/assets/shortlist.png"; 
+import ApplyModal from "./ApplyModal.jsx";
 
 const ApplicationStats = () => {
   const stats = [
@@ -47,6 +48,8 @@ const ApplicationStats = () => {
 
 
 const JobDescription = () => {
+
+    const [showResumePopup, setShowResumePopup] = useState(false);
   return (
     <div className="job-details-container">
       {/* Header */}
@@ -110,10 +113,12 @@ const JobDescription = () => {
 
       {/* Button Row */}
       <div className="button-row">
-        <button className="apply-btn">Apply Now</button>
+        <button className="apply-btn" onClick={() => setShowResumePopup(true)} >Apply Now</button>
+        
         <button className="save-btn">💾 Save Job</button>
         <button className="share-btn">📤</button>
       </div>
+      {showResumePopup && <ApplyModal onClose={() => setShowResumePopup(false)} />}
     </div>
   );
 };

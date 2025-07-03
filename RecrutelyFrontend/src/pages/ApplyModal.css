@@ -1,0 +1,211 @@
+
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+/* 
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it floats above everything */
+}
+/* .popup {
+  width: 90%;
+  max-width: 37.5vw;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  height:100vh;
+
+} */
+
+.popup {
+  background: white;
+  width: 90%;
+  max-width: 37.5vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.popup-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.upload-box {
+  border: 2px dashed #ccc;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 0.75rem;
+  background-color: #f9f9f9;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-button {
+  margin-top: 1rem;
+  background-color: #334b64;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.upload-note {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: #555;
+  margin: 1.5rem 0;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.saved-resumes {
+  margin-bottom: 2rem;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 0.75rem;
+  background-color: #fafafa;
+}
+
+.resume-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pdf-icon {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.resume-name {
+  font-weight: 600;
+}
+
+.resume-meta {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.resume-actions {
+  font-size: 1.2rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.message-box textarea {
+ width: 100%;
+  min-height: 6.25%; /* or 10vh for responsiveness */
+  resize: vertical; /* allows user to adjust */
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel {
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+
+}
+
+.submit {
+  padding: 0.6rem 1.2rem;
+  background-color: #334b64;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  
+}
+
+
+
+
+/* .file-input {
+  display: none; 
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #1e3a8a;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-align: center;
+} */
+
