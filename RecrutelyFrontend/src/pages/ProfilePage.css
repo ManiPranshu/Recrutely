@@ -1,0 +1,197 @@
+.profile-page {
+    
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #1e1e1e;
+  max-width: 90%;
+  margin: 0 auto;
+  font-family: sans-serif;
+
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+.go-back-btn {
+  background-color: transparent;
+  color: #2c5277;
+  border: 1px solid #2c5277;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.go-back-btn:hover {
+  background-color: #2c5277;
+  color: white;
+}
+
+
+.profile-photo-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-photo-box {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.photo-placeholder {
+  width: 100px;
+  height: 100px;
+  border: 1px dashed #ccc;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-photo-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2c5277;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.upload-photo-btn:hover {
+  background-color: #1e3f5a;
+}
+
+.recommend {
+  font-size: 0.5rem;
+  color: #334155;
+  margin-top: 0.5rem;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-grid input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+}
+
+.section {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  background: none;
+  color: #334155;
+  border: none;
+  cursor: pointer;
+}
+
+.skills-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-pill {
+  background-color: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.remove-skill {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.experience-box {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.action-icons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.resume-section {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+
+}
+
+.upload-box {
+  border: 1px dashed #aaa;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.resume-file {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.resume-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.save-btn {
+  float: right;
+  background-color: #334155;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.skill-input {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+}

@@ -8,7 +8,7 @@ import facebook from "/assets/facebook.png"
 function Rectangle(){
   return(
     <div className="rect">
-       <p className="heading">Recrutely</p>
+       <h1 className="heading">Recrutely</h1>
     </div>
   )
 }
@@ -16,7 +16,7 @@ function Rectangle(){
 function SignInGrid(){
   return(
     <div className="grid">
-      <p className="signin">Sign-In</p>
+      <h2 className="signin">Sign-In</h2>
 
       <button className="google">
         <img src={google} alt="google image" style={{height:"95%", width: "auto"}} />

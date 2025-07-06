@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./ApplyModal.css"; // Import the CSS below
 
 function ApplyModal({ onClose }) {
-
   const [selectedFile, setSelectedFile] = useState(null);
 
   function handleFileUpload(e) {

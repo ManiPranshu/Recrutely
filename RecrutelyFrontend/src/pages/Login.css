@@ -11,12 +11,8 @@
 
 .heading{
   color: white;
-  font-size: 2rem;;
 }
 
-.signin{
-  font-size: 1.5rem;;
-}
 .grid{
   width: 35vw;
   height: 65vh;
@@ -41,7 +37,6 @@
   gap: 0.5rem;
   background-color: white;
   cursor: pointer;
-  font-size: 1rem;
 }
 
 .divider {

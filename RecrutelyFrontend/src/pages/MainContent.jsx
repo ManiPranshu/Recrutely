@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import './MainContent.css'; 
-import companyLogo from "/assets/google.png";
+import companyLogo from "/assets/moon.png";
 import Applications from "./Application.jsx"; 
-import docIcon from "/assets/application.png";          
-import rejectedIcon from "/assets/totaljob.png"; 
-import shortlistedIcon from "/assets/shortlist.png"; 
 import ApplyModal from "./ApplyModal.jsx";
+
+
+
+
+import docIcon from "/assets/application.png";         // Replace with actual path to blue document icon
+import rejectedIcon from "/assets/totaljob.png"; // Replace with red X icon
+import shortlistedIcon from "/assets/shortlist.png"; // Replace with green check icon
+import ProfilePage from "./ProfilePage.jsx";
+
+
 
 const ApplicationStats = () => {
   const stats = [
@@ -49,7 +56,8 @@ const ApplicationStats = () => {
 
 const JobDescription = () => {
 
-    const [showResumePopup, setShowResumePopup] = useState(false);
+  const [showResumePopup, setShowResumePopup] = useState(false);
+
   return (
     <div className="job-details-container">
       {/* Header */}
@@ -101,7 +109,7 @@ const JobDescription = () => {
           <h3 className="company-name">Google Inc.</h3>
           <p><strong>Industry:</strong> Technology</p>
           <p><strong>Company Size:</strong> 10,000+ Employees</p>
-          <button className="visit-button"   onClick={() => window.open("https://www.google.com/about/careers/applications/", "_blank")}>Visit Website</button>
+          <button className="visit-button">Visit Website</button>
           <h4>About Company</h4>
           <p className="about-text">
             Google is a multinational technology company that specializes in Internet-related
@@ -115,15 +123,20 @@ const JobDescription = () => {
       <div className="button-row">
         <button className="apply-btn" onClick={() => setShowResumePopup(true)} >Apply Now</button>
         
-        <button className="save-btn">💾 Save Job</button>
+        <button className="save-btn1">💾 Save Job</button>
         <button className="share-btn">📤</button>
       </div>
       {showResumePopup && <ApplyModal onClose={() => setShowResumePopup(false)} />}
     </div>
+    
   );
 };
 
 const Joblist = () => {
+
+
+
+
   return (
 
       <div className="job-row">
@@ -132,8 +145,9 @@ const Joblist = () => {
           <p>Company Name</p>
           <p>Location</p>
           <p>Salary Range</p>
-          <button className="apply-button">Apply Now</button>
+          <button className="apply-button" >Apply Now</button>
         </div>
+       
 
         <div className="job-card">
           <h3>Job Title</h3>
@@ -182,20 +196,17 @@ const Joblist = () => {
   );
 };
 
-
-
-
-
 const MainContent = () => {
   return (
     <div className="main-content">
 
       
-      
+
       <ApplicationStats />
       <Joblist />
        <Applications />
        <JobDescription />
+
 
       
       <div style={{ height: "auto" }}></div>

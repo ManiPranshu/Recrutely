@@ -1,0 +1,53 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-submit {
+  background: #2c5277;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid #B2ABAB;
+  cursor: pointer;
+}
+
+.modal-cancel {
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #B2ABAB;
+  cursor: pointer;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

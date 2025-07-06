@@ -1,49 +1,30 @@
-// import { useState } from 'react'
+
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import {Register} from './pages/register.jsx'
-import Login from './pages/Login.jsx'
-import Dashboard from './pages/dashboard.jsx';
+import Dashboard from './pages/dashboard';
+import ProfilePage from './pages/ProfilePage';
+import {Register} from './pages/register';
+import { SidebarProvider } from "./pages/SidebarContext";
+import Layout from './pages/Layout';
+
+
 
 function App(){
   return(
     <>
       <Router>
-        <Routes>
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<Dashboard />} />
+      <SidebarProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/apply" element={<Register />} />
 
-      </Routes>
+          </Routes>
+        </Layout>
+      </SidebarProvider>
     </Router>
     </>
   )
 }
 
 export default App;
-
-// import React, { useState } from 'react';
-// import Header from './pages/Header.jsx';
-// import Sidebar from './pages/sidebar.jsx';
-// import MainContent from './pages/Maincontent.jsx';
-// import './pages/style.css';
-
-// function App() {
-//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-//   return (
-//     <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-//       <Sidebar isOpen={isSidebarOpen} />
-//       <div className="main-area">
-//         <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-//         <MainContent/>
-//       </div>
-      
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
-
