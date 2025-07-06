@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -16.75vw; /* hidden by default */
+  left: -16.75vw; 
   width: 16.75vw;
   height: 100vh;
   background-color: #334E68;
@@ -14,13 +14,13 @@
   justify-content: space-between;
 }
 
-/* Sidebar visible */
+
 .sidebar.open {
   left: 0;
 
 }
 
-/* Header: avatar + labels */
+
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -39,21 +39,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+
 }
 
 .sidebar-title {
   font-size: 1.2rem;
   margin: 0;
   font-weight: 600;
+
 }
 
 .sidebar-subtitle {
   font-size: 0.85rem;
   margin: 0;
   color: #cbd5e1;
+
 }
 
-/* Navigation list */
+
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -77,13 +81,9 @@
   background-color: #5a86c3;
 }
 
-/* Active item */
-/* .sidebar ul li.active {
-  background-color: #3b82f6;
-  color: white;
-} */
 
-/* Logout section */
+
+
 .sidebar-footer {
   margin-top: auto; 
   display: flex;
@@ -101,7 +101,7 @@
 }
 
 
-/* Optional: icon styling */
+
 .sidebar .nav-icon {
   font-size: 1.1rem;
 }
@@ -111,33 +111,34 @@
   height: 1.25rem;
 }
 
-/* Collapsed state */
+
 .sidebar:not(.open) {
-  width: 4.5rem; /* or whatever width fits icons */
-  left: 0; /* keep visible when collapsed */
+  width: 4.5rem; 
+  left: 0; 
   padding: 1rem 0.5rem;
 }
 
+
 .sidebar:not(.open) .sidebar-title,
 .sidebar:not(.open) .sidebar-subtitle,
-.sidebar:not(.open) .avatar-circle,
+
 .sidebar:not(.open) .sidebar-footer span,
 .sidebar:not(.open) .nav-item span {
   display: none;
 }
 
-/* Adjust alignment when collapsed */
+
 .sidebar:not(.open) .sidebar-header,
 .sidebar:not(.open) .sidebar-footer,
 .sidebar:not(.open) .nav-item {
   justify-content: center;
 }
 
-/* Position the toggle button slightly out of the sidebar */
+
 .arrow {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.8%;
+  left: 85%;
   background-color: #1e293b;
   border: 2px solid #fff;
   color: #fff;
@@ -150,4 +151,16 @@
 
 .sidebar:not(.open) .hamburger-btn {
   right: -1.2rem;
+}
+
+.sidebar:not(.open) .avatar-circle {
+margin-top:50%;
+
+}
+.sidebar:not(.open) .arrow {
+ left:55%;
+}
+.sidebar:not(.open) .sidebar-header {
+  flex-direction: column;
+  align-items: center;
 }

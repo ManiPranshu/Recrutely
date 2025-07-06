@@ -5,7 +5,7 @@ import profilepic from "/assets/unnamed.png";
 import menu from "/assets/menu.png";
 import "./Header.css"; 
 import { Link } from "react-router-dom";
-import { useSidebar } from "./SidebarContext";
+
 
 
 
