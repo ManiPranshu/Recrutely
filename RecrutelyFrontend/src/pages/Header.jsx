@@ -4,12 +4,34 @@ import moon from "/assets/moon.png";
 import profilepic from "/assets/unnamed.png";
 import menu from "/assets/menu.png";
 import "./Header.css"; 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 
 
 
 
 const Header = () => {
+  const location = useLocation(); // <-- get current location
+
+  // Function to get header content based on route
+  const getHeaderContent = () => {
+    switch (location.pathname) {
+      case "/dashboard":
+        return "Welcome to your dashboard";
+      case "/profile":
+        return "Here is your profile";
+      case "/application":
+        return "Here are your applications";
+      case "/jobs":
+        return "Here are your jobs";
+      case "/rdashboard":
+        return "Welcome Employer";
+      case "/jobdesc":
+        return "Here is your job details";
+      default:
+        return "";
+    }
+  };
 
   return (
     <header className="header">
@@ -17,7 +39,9 @@ const Header = () => {
        
         <div className="welcome-text">
           <h2>Welcome back, Candidate!</h2>
-          <p>Here is your job details</p>
+          {/* <p>Here is your job details</p> */}
+          <p>{getHeaderContent()}</p>
+
         </div>
       </div>
       <div className="header-right">

@@ -12,36 +12,12 @@
 
 }
 
-/* .sidebar {
-  position: fixed;
-  top: 0;
-  left: -13.75vw;
-  width: 13.75vw;
-  height: 100vh;
-  background-color: #1e293b;
-  color: #fff;
-  padding: 2rem 1rem;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar ul li {
-  margin: 1rem 0;
-  
-} */
 
 .main-area {
   margin-left: 0;
   width: 100vw;
   transition: margin-left 0.3s ease, width 0.3s ease;
+  /* transition: transform 0.3 ease; */
 }
 
 .main-content {

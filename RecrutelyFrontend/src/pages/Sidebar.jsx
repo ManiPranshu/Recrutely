@@ -3,18 +3,20 @@ import "./Sidebar.css";
 import { useSidebar } from "./SidebarContext";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaHome, FaUser, FaClipboardList, FaBriefcase, FaSignOutAlt } from "react-icons/fa";
-
+import { NavLink} from "react-router-dom";
+import {FaChevronLeft,FaChevronRight} from "react-icons/fa";
 
 const Sidebar = () => {
 
   const { isSidebarOpen, toggleSidebar } = useSidebar();
+ 
 
   return (
     <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-       <button className="arrow" onClick={toggleSidebar}>
+       <div className="arrow" onClick={toggleSidebar}>
              
-                {isSidebarOpen ? <FaArrowLeft /> : <FaArrowRight />}
-              </button>
+                {isSidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}
+              </div>
 
 
 
@@ -29,22 +31,22 @@ const Sidebar = () => {
       {/* Navigation items */}
       <nav className="sidebar-nav">
         <ul>
-  <li className="nav-item">
+  <NavLink className="nav-item" to="/dashboard" activeClassName="active">
     <FaHome className="nav-img-icon" />
     <span>Dashboard</span>
-  </li>
-  <li className="nav-item">
+  </NavLink>
+  <NavLink className="nav-item" to="/profile" activeClassName="active">
     <FaUser className="nav-img-icon" />
     <span>Profile</span>
-  </li>
-  <li className="nav-item">
+  </NavLink>
+  <NavLink className="nav-item" to="/application" activeClassName="active">
     <FaClipboardList className="nav-img-icon" />
     <span>Applications</span>
-  </li>
-  <li className="nav-item active">
+  </NavLink>
+  <NavLink className="nav-item" to="/jobs" activeClassName="active">
     <FaBriefcase className="nav-img-icon" />
     <span>Jobs</span>
-  </li>
+  </NavLink>
 </ul>
       </nav>
 
