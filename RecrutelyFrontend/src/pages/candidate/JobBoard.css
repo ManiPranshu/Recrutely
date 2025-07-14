@@ -21,7 +21,7 @@
   font-size: 1rem;
 }
 
-.c-job-filters select, .apply-filters {
+.c-job-filters select, .c-apply-filters {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid #cbd5e1;
