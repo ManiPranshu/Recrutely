@@ -1,7 +1,7 @@
 import "./JobDescription.css"
 import {useState} from "react"
 import companyLogo from "/assets/google.png"; // or your actual logo path
-import ApplyModal from "../../componenets/ApplyModal"; // or your actual modal file path
+import ApplyModal from "../../components/ApplyModal"; // or your actual modal file path
 export default function JobDescription () {
 
   const [showResumePopup, setShowResumePopup] = useState(false);

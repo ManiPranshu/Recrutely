@@ -3,9 +3,9 @@ import "./ProfilePage.css";
 import { FaCamera, FaTrash, FaPen } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; 
 
-import SkillModal from "../../componenets/SkillModal"; 
-import ExperienceModal from "../../componenets/ExperienceModal";
-import EducationModal from "../../componenets/EducationModal"; 
+import SkillModal from "../../components/SkillModal"; 
+import ExperienceModal from "../../components/ExperienceModal";
+import EducationModal from "../../components/EducationModal"; 
 
 const ProfilePage = () => {
 
