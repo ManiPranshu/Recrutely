@@ -115,30 +115,50 @@ export default function JobBoard() {
           {Math.min(page * JOBS_PER_PAGE, filteredJobs.length)} of {filteredJobs.length} jobs
         </span>
         <div className="pagination-controls">
-          <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
-            &#60;
-          </button>
-          {Array.from({ length: totalPages }, (_, i) => i + 1)
-            .slice(
-              Math.max(0, page - 2),
-              Math.min(totalPages, page + 1)
-            )
-            .map((p) => (
-              <button
-                key={p}
-                className={p === page ? "active" : ""}
-                onClick={() => handlePageChange(p)}
-              >
-                {p}
-              </button>
-            ))}
-          {page < totalPages - 2 && <span>...</span>}
-          {page < totalPages && (
-            <button onClick={() => handlePageChange(totalPages)}>{totalPages}</button>
-          )}
-          <button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
-            &#62;
-          </button>
+         <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
+  &#60;
+</button>
+{page > 2 && (
+  <>
+    <button
+      className={page === 1 ? "active" : ""}
+      onClick={() => handlePageChange(1)}
+    >
+      1
+    </button>
+    {page > 3 && <span className="pagination-ellipsis">...</span>}
+  </>
+)}
+{Array.from({ length: totalPages }, (_, i) => i + 1)
+  .filter(
+    (p) =>
+      p === page ||
+      p === page - 1 ||
+      p === page + 1
+  )
+  .map((p) => (
+    <button
+      key={p}
+      className={p === page ? "active" : ""}
+      onClick={() => handlePageChange(p)}
+    >
+      {p}
+    </button>
+  ))}
+{page < totalPages - 1 && (
+  <>
+    {page < totalPages - 2 && <span className="pagination-ellipsis">...</span>}
+    <button
+      className={page === totalPages ? "active" : ""}
+      onClick={() => handlePageChange(totalPages)}
+    >
+      {totalPages}
+    </button>
+  </>
+)}
+<button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
+  &#62;
+</button>
         </div>
       </div>
     </div>

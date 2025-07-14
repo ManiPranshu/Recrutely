@@ -4,7 +4,7 @@ import { FaEye, FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-const allApplicants = Array.from({ length: 34 }, (_, i) => ({
+const allApplicants = Array.from({ length: 124 }, (_, i) => ({
   name: `Abhijeet Kumar ${i + 1}`,
   email: `abhijeet${i + 1}@email.com`,
   skills: ["Javascript", "Typescript", "React"],
@@ -138,24 +138,51 @@ function ViewApplicants() {
           Showing {startIndex + 1}-{Math.min(startIndex + rowsPerPage, filteredApplicants.length)} of {filteredApplicants.length} applicants
         </span>
         <div className="pagination-buttons">
-          <button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>
-            {"<"}
-          </button>
-
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              className={currentPage === i + 1 ? "active" : ""}
-              onClick={() => changePage(i + 1)}
-            >
-              {i + 1}
-            </button>
-          ))}
-
-          <button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}>
-            {">"}
-          </button>
-        </div>
+  <button onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1}>
+    {"<"}
+  </button>
+  {currentPage > 2 && (
+    <>
+      <button
+        className={currentPage === 1 ? "active" : ""}
+        onClick={() => changePage(1)}
+      >
+        1
+      </button>
+      {currentPage > 3 && <span className="pagination-ellipsis">...</span>}
+    </>
+  )}
+  {Array.from({ length: totalPages }, (_, i) => i + 1)
+    .filter(
+      (p) =>
+        p === currentPage ||
+        p === currentPage - 1 ||
+        p === currentPage + 1
+    )
+    .map((p) => (
+      <button
+        key={p}
+        className={currentPage === p ? "active" : ""}
+        onClick={() => changePage(p)}
+      >
+        {p}
+      </button>
+    ))}
+  {currentPage < totalPages - 1 && (
+    <>
+      {currentPage < totalPages - 2 && <span className="pagination-ellipsis">...</span>}
+      <button
+        className={currentPage === totalPages ? "active" : ""}
+        onClick={() => changePage(totalPages)}
+      >
+        {totalPages}
+      </button>
+    </>
+  )}
+  <button onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages}>
+    {">"}
+  </button>
+</div>
       </div>
     </div>
   );
