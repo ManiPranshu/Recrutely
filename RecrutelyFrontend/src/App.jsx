@@ -10,6 +10,8 @@ import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
 import JobBoard from "./pages/candidate/JobBoard";
 import Applications from "./pages/candidate/Application";
 import JobDescription from "./pages/candidate/JobDescription";
+import JobListing from "./pages/recruiter/JobListing";
+import PostJob from "./pages/recruiter/PostJob";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
                  < Route path="/applicants" element={< ViewApplicants/>}/>
                  < Route path="/application" element={< Applications/>}/>
                  < Route path="/jobdesc" element={< JobDescription/>}/>
+                  < Route path="/joblisting" element={< JobListing/>}/> 
+                  <Route path="/postjob" element={< PostJob/>}/>
 
 
 

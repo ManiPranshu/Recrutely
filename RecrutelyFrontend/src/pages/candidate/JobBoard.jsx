@@ -53,11 +53,11 @@ export default function JobBoard() {
   };
 
   return (
-    <div className="job-board">
+    <div className="c-job-board">
       {/* Search and Filters */}
-      <form className="job-filters" onSubmit={handleFilter}>
+      <form className="c-job-filters" onSubmit={handleFilter}>
         <input
-          className="job-search"
+          className="c-job-search"
           type="text"
           placeholder="Search job titles, companies or keywords..."
           value={search}
@@ -78,43 +78,43 @@ export default function JobBoard() {
             <option key={sal}>{sal}</option>
           ))}
         </select>
-        <button className="apply-filters" type="submit">
+        <button className="c-apply-filters" type="submit">
           <span role="img" aria-label="filter">⏵</span> Apply Filters
         </button>
       </form>
 
       {/* Job Cards */}
-      <div className="job-cards">
+      <div className="c-job-cards">
         {paginatedJobs.map((job) => (
-          <div className="job-card" key={job.id}>
-            <div className="job-card-header">
+          <div className="c-job-card" key={job.id}>
+            <div className="c-job-card-header">
               <div>
-                <div className="job-title">{job.title}</div>
-                <div className="job-company">{job.company}</div>
+                <div className="c-job-title">{job.title}</div>
+                <div className="c-job-company">{job.company}</div>
               </div>
-              <button className="bookmark-btn" title="Bookmark">&#9734;</button>
+              <button className="c-bookmark-btn" title="Bookmark">&#9734;</button>
             </div>
-            <div className="job-tags">
-              <span className="job-tag">{job.type}</span>
-              <span className="job-tag">{job.location}</span>
-              <span className="job-tag">{job.salary}</span>
+            <div className="c-job-tags">
+              <span className="c-job-tag">{job.type}</span>
+              <span className="c-job-tag">{job.location}</span>
+              <span className="c-job-tag">{job.salary}</span>
             </div>
-            <div className="job-desc">{job.description}</div>
-            <div className="job-footer">
-              <span className="job-posted">Posted {job.posted}</span>
-             <Link to="/jobdesc" ><button className="apply-btn">Apply Now</button></Link>
+            <div className="c-job-desc">{job.description}</div>
+            <div className="c-job-footer">
+              <span className="c-job-posted">Posted {job.posted}</span>
+             <Link to="/jobdesc" ><button className="c-apply-btn">Apply Now</button></Link>
             </div>
           </div>
         ))}
       </div>
 
       {/* Pagination */}
-      <div className="job-pagination">
+      <div className="c-job-pagination">
         <span>
           Showing {(page - 1) * JOBS_PER_PAGE + 1}-
           {Math.min(page * JOBS_PER_PAGE, filteredJobs.length)} of {filteredJobs.length} jobs
         </span>
-        <div className="pagination-controls">
+        <div className="c-pagination-controls">
          <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
   &#60;
 </button>
@@ -126,7 +126,7 @@ export default function JobBoard() {
     >
       1
     </button>
-    {page > 3 && <span className="pagination-ellipsis">...</span>}
+    {page > 3 && <span className="c-pagination-ellipsis">...</span>}
   </>
 )}
 {Array.from({ length: totalPages }, (_, i) => i + 1)
@@ -139,7 +139,7 @@ export default function JobBoard() {
   .map((p) => (
     <button
       key={p}
-      className={p === page ? "active" : ""}
+      className={p === page ? "c-active" : ""}
       onClick={() => handlePageChange(p)}
     >
       {p}
@@ -147,9 +147,9 @@ export default function JobBoard() {
   ))}
 {page < totalPages - 1 && (
   <>
-    {page < totalPages - 2 && <span className="pagination-ellipsis">...</span>}
+    {page < totalPages - 2 && <span className="c-pagination-ellipsis">...</span>}
     <button
-      className={page === totalPages ? "active" : ""}
+      className={page === totalPages ? "c-active" : ""}
       onClick={() => handlePageChange(totalPages)}
     >
       {totalPages}

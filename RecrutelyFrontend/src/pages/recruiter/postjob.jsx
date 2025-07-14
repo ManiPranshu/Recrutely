@@ -11,28 +11,28 @@ const PostJob = () => {
 
   return (
     <>
-      <div className="heading-profile">
+      <div className="rp-heading-profile">
         <h2>Post a new job</h2>
         <p>Fill out the job details below to create a new listing.</p>
       </div>
 
-      <div className="job-post-form">
-        <label htmlFor="title" className="post-job-label">
+      <div className="rp-job-post-form">
+        <label htmlFor="title" className="rp-post-job-label">
           Job Title
         </label>
         <input
           type="text"
           id="title"
-          className="post-job-input"
+          className="rp-post-job-input"
           placeholder="e.g. Senior Frontend Developer"
         />
 
-        <span className="post-job-label">Work Mode</span>
-        <div className="btn-group">
+        <span className="rp-post-job-label">Work Mode</span>
+        <div className="rp-btn-group">
           {optionsMode.map((type) => (
             <button
               key={type}
-              className={`type-btn ${selectedType === type ? "active" : ""}`}
+              className={`rp-type-btn ${selectedType === type ? "rp-active" : ""}`}
               onClick={() => setSelectedType(type)}
             >
               {type}
@@ -40,12 +40,12 @@ const PostJob = () => {
           ))}
         </div>
 
-        <span className="post-job-label">Job Type</span>
-        <div className="btn-group">
+        <span className="rp-post-job-label">Job Type</span>
+        <div className="rp-btn-group">
           {opetionsType.map((type) => (
             <button
               key={type}
-              className={`type-btn ${selectedJobType === type ? "active" : ""}`}
+              className={`rp-type-btn ${selectedJobType === type ? "rp-active" : ""}`}
               onClick={() => setSelectedJobType(type)}
             >
               {type}
@@ -53,28 +53,28 @@ const PostJob = () => {
           ))}
         </div>
 
-        <span className="post-job-label">Salary Range</span>
-        <div className="salary-input-form">
+        <span className="rp-post-job-label">Salary Range</span>
+        <div className="rp-salary-input-form">
           <input
             type="text"
             placeholder="Min (e.g. 80000) "
-            className="min-salary"
+            className="rp-min-salary"
           />
           <span style={{ color: "#B2ABAB" }}>-</span>
           <input
             type="text"
             placeholder="Max (e.g. 80000) "
-            className="max-salary"
+            className="rp-max-salary"
           />
         </div>
 
-        <label htmlFor="location" className="post-job-label">
+        <label htmlFor="location" className="rp-post-job-label">
           Location
         </label>
         <input
           type="text"
           id="location"
-          className="post-job-input"
+          className="rp-post-job-input"
           placeholder="e.g. NY"
         />
 
@@ -83,39 +83,39 @@ const PostJob = () => {
         >
           Job Description
         </span>
-        <label htmlFor="respon" className="post-job-label">
+        <label htmlFor="respon" className="rp-post-job-label">
           Responsibilities
         </label>
         <textarea
           type="text"
           id="respon"
-          className="post-job-discript"
+          className="rp-post-job-discript"
           placeholder="List key responsibilities and duties..."
         ></textarea>
 
-        <label htmlFor="rskills" className="post-job-label">
+        <label htmlFor="rskills" className="rp-post-job-label">
           Required Skills
         </label>
         <textarea
           type="text"
           id="rskills"
-          className="post-job-discript"
+          className="rp-post-job-discript"
           placeholder="List required skills and qualifications..."
         ></textarea>
 
-        <label htmlFor="perks" className="post-job-label">
+        <label htmlFor="perks" className="rp-post-job-label">
           Perks & Benefits
         </label>
         <textarea
           type="text"
           id="perks"
-          className="post-job-discript"
+          className="rp-post-job-discript"
           placeholder="List company perks and benefits..."
         ></textarea>
 
-        <div className="form-buttons">
-          <button className="btn reset-btn">Reset</button>
-          <button className="btn post-btn">
+        <div className="rp-form-buttons">
+          <button className="rp-btn rp-reset-btn">Reset</button>
+          <button className="rp-btn rp-post-btn">
             <FaPaperPlane /> Post Job
           </button>
         </div>

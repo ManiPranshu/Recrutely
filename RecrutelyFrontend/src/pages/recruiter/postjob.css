@@ -1,4 +1,8 @@
-.job-post-form{
+.rp-heading-profile{
+  margin-bottom: 2rem;
+}
+
+.rp-job-post-form{
   width: 60vw;
   margin: 0 auto 1rem;
   padding: 1em;
@@ -8,7 +12,7 @@
   flex-direction: column;
 }
 
-.post-job-input,.min-salary,.max-salary,.post-job-discript{
+.rp-post-job-input,.rp-min-salary,.rp-max-salary,.rp-post-job-discript{
   border: 0.15vw solid #B2ABAB;
   border-radius: 1vh;
   font-size: 1rem;
@@ -19,32 +23,32 @@
   /* width: 95%; */
 }
 
-.post-job-input{
+.rp-post-job-input{
   width: 95%;
 }
 
-.min-salary,.max-salary{
+.rp-min-salary,.rp-max-salary{
   width: 40%;
 }
 
-.salary-input-form{
+.rp-salary-input-form{
   width: 95%;
   display: flex;
   justify-content: space-between;
 }
-.post-job-label{
+.rp-post-job-label{
   color: #4A5C65;
   font-size: 1rem;
   margin: 0.25em 0;
 }
 
-.btn-group {
+.rp-btn-group {
   display: flex;
   gap: 1em;
   margin: .25em 0;
 }
 
-.type-btn {
+.rp-type-btn {
   padding: 0.5em 1.2em;
   border-radius: 0.5em;
   border: 1px solid #ccc;
@@ -54,26 +58,26 @@
   transition: background 0.2s ease;
 }
 
-.type-btn.active {
+.rp-type-btn.rp-active {
   background: #334E68;
   color: white;
   border-color: #334E68;
 }
 
-.post-job-discript{
+.rp-post-job-discript{
   width: 95%;
   height: 15vh;
   padding-top: 1rem;
 }
 
-.form-buttons {
+.rp-form-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 1em;
   margin-top: 2em;
 }
 
-.btn {
+.rp-btn {
   font-size: 1em;
   padding: 0.6em 1.4em;
   border-radius: 0.6em;
@@ -87,23 +91,23 @@
 }
 
 /* Reset button */
-.reset-btn {
+.rp-reset-btn {
   background: white;
   color: black;
   border: 1px solid #aaa;
 }
 
-.reset-btn:hover {
+.rp-reset-btn:hover {
   background: #f5f5f5;
 }
 
 /* Post button */
-.post-btn {
+.rp-post-btn {
   background: #2f4a68;
   color: white;
   border: none;
 }
 
-.post-btn:hover {
+.rp-post-btn:hover {
   background: #1f3a58;
 }
