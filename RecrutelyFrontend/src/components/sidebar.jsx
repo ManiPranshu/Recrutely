@@ -22,7 +22,6 @@ const Sidebar = () => {
 
   return (
     <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
-      <div className="logo"></div>
       <div className="toggle-button" onClick={toggleSidebar}>
         {collapsed ? (
           <FaChevronRight size="1.2rem" color="white" />

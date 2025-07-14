@@ -3,11 +3,11 @@ import './App.css'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import {Register} from './pages/register.jsx'
 import Login from './pages/Login.jsx'
-import Profile from './pages/profile.jsx'
+import Profile from './pages/candidate/profile.jsx'
 // import Sidebar from './components/sidebar.jsx'
 import Layout from './layout.jsx'
-import JobListing from './pages/joblisting.jsx'
-import PostJob from './pages/postjob.jsx'
+import JobListing from './pages/recruiter/joblisting.jsx'
+import PostJob from './pages/recruiter/postjob.jsx'
 
 function App(){
   return(
@@ -22,6 +22,7 @@ function App(){
           </Route>
        </Routes>
         <Routes>
+          <Route path='/' element={<Register />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
       </Routes>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./joblisting.css";
-import JobCard from "../components/JobCard";
+import JobCard from "../../components/JobCard";
 import { useState } from "react";
 
 const dummyJobs = [
