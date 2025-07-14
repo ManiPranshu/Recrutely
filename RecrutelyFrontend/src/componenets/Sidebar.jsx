@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import { useSidebar } from "./SidebarContext";
+import { useSidebar } from "../context/SidebarContext";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaHome, FaUser, FaClipboardList, FaBriefcase, FaSignOutAlt } from "react-icons/fa";
 import { NavLink} from "react-router-dom";

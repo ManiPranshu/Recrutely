@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import './MainContent.css'; 
-import companyLogo from "/assets/moon.png";
 import Applications from "./Application.jsx"; 
-import ApplyModal from "./ApplyModal.jsx";
+
 
 
 

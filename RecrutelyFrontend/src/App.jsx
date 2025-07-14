@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/dashboard";
-import ProfilePage from "./pages/ProfilePage";
+import Dashboard from "./pages/candidate/dashboard";
+import ProfilePage from "./pages/candidate/ProfilePage";
 import { Register } from "./pages/register";
-import { SidebarProvider } from "./pages/SidebarContext";
-import Layout from "./pages/Layout";
+import { SidebarProvider } from "./context/SidebarContext";
+import Layout from "./Layout";
 import Login from "./pages/Login";
-import ViewApplicants from "./pages/ViewApplicants";
-import RecruiterDashboard from "./pages/RecruiterDashboard";
-import JobBoard from "./pages/JobBoard";
-import Applications from "./pages/Application";
-import JobDescription from "./pages/JobDescription";
+import ViewApplicants from "./pages/recruiter/ViewApplicants";
+import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
+import JobBoard from "./pages/candidate/JobBoard";
+import Applications from "./pages/candidate/Application";
+import JobDescription from "./pages/candidate/JobDescription";
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 // Layout.jsx
 import React from "react";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
-import { useSidebar } from "./SidebarContext";
+import Sidebar from "./componenets/Sidebar";
+import Header from "./componenets/Header";
+import { useSidebar } from "./context/SidebarContext";
 import "./Layout.css"; 
 
 const Layout = ({ children }) => {
