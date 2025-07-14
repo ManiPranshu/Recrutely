@@ -1,62 +1,60 @@
-import { NavLink } from "react-router-dom";
-import { FaHome, FaUser, FaRegFileAlt, FaBriefcase, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import "./sidebar.css";
-import { useSidebar } from "../context/sidebarContext";
-
-const SidebarLink = ({ to, label, icon, collapsed }) => {
-  return (
-    <NavLink  
-      to={to}
-      className={({ isActive }) => (isActive ? "active" : "notactive")}
-    >
-      <span className="link-content">
-        {icon && <span className="icon">{icon}</span>}
-        {!collapsed && <span className="label">{label}</span>}
-      </span>
-    </NavLink>
-  );
-};
+import React from "react";
+import "./Sidebar.css";
+import { useSidebar } from "../context/SidebarContext";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaHome, FaUser, FaClipboardList, FaBriefcase, FaSignOutAlt } from "react-icons/fa";
+import { NavLink} from "react-router-dom";
+import {FaChevronLeft,FaChevronRight} from "react-icons/fa";
 
 const Sidebar = () => {
-  const {toggleSidebar, collapsed} = useSidebar();
+
+  const { isSidebarOpen, toggleSidebar } = useSidebar();
+ 
 
   return (
-    <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
-      <div className="toggle-button" onClick={toggleSidebar}>
-        {collapsed ? (
-          <FaChevronRight size="1.2rem" color="white" />
-        ) : (
-          <FaChevronLeft size="1.2rem" color="white" />
-        )}
+    <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+       <div className="arrow" onClick={toggleSidebar}>
+             
+                {isSidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}
+              </div>
+
+
+
+      <div className="sidebar-header">
+        <div className="avatar-circle">CD</div>
+        <div>
+          <h1 className="sidebar-title">Candidate</h1>
+          <p className="sidebar-subtitle">Dashboard</p>
+        </div>
       </div>
 
-      <SidebarLink
-        to="/dashboard"
-        label={"Dashboard"}
-        icon={<FaHome size="1rem" color="white" />}
-        collapsed={collapsed}
-      />
+      {/* Navigation items */}
+      <nav className="sidebar-nav">
+        <ul>
+  <NavLink className="nav-item" to="/dashboard" activeClassName="active">
+    <FaHome className="nav-img-icon" />
+    <span>Dashboard</span>
+  </NavLink>
+  <NavLink className="nav-item" to="/profile" activeClassName="active">
+    <FaUser className="nav-img-icon" />
+    <span>Profile</span>
+  </NavLink>
+  <NavLink className="nav-item" to="/application" activeClassName="active">
+    <FaClipboardList className="nav-img-icon" />
+    <span>Applications</span>
+  </NavLink>
+  <NavLink className="nav-item" to="/jobs" activeClassName="active">
+    <FaBriefcase className="nav-img-icon" />
+    <span>Jobs</span>
+  </NavLink>
+</ul>
+      </nav>
 
-      <SidebarLink
-        to="/profile"
-        label={"Profile"}
-        icon={<FaUser size="1rem" color="white" />}
-        collapsed={collapsed}
-      />
-
-      <SidebarLink
-        to="/application"
-        label={"Application"}
-        icon={<FaRegFileAlt size="1rem" color="white" />}
-        collapsed={collapsed}
-      />
-
-      <SidebarLink
-        to="/job"
-        label={"Job"}
-        icon={<FaBriefcase size="1rem" color="white" />}
-        collapsed={collapsed}
-      />
+      {/* Logout */}
+      <div className="sidebar-footer">
+  <FaSignOutAlt className="nav-img-icon" />
+  <span>Logout</span>
+</div>
     </div>
   );
 };

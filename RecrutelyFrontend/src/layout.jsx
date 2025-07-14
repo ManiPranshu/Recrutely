@@ -1,25 +1,23 @@
-import Sidebar from "./components/sidebar";
-import { SidebarProvider } from "../context/sidebarContext"
-import { Outlet } from "react-router-dom";
-import Header from "./components/header";
-import "./layout.css"
+// Layout.jsx
+import React from "react";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import { useSidebar } from "./context/SidebarContext";
+import "./Layout.css"; 
 
-function Layout() {
+const Layout = ({ children }) => {
+  const { isSidebarOpen } = useSidebar();
+
   return (
-    <SidebarProvider>
-      <div className="app-layout">
-        <Sidebar />
+  <div className={`app-container ${isSidebarOpen ? "sidebar-open" : "sidebar-collapsed"}`}>
+  <Sidebar />
+  <div className="main-area">
+    <Header />
+    <div className="page-content">{children}</div>
+  </div>
+</div>
 
-        <div className="main-area">
-          <Header />
-          <div className="main-content">
-            <Outlet />
-          </div>
-        </div>
-
-      </div>
-    </SidebarProvider>
   );
-}
+};
 
 export default Layout;

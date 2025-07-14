@@ -2,19 +2,16 @@ import { createContext, useContext, useState } from "react";
 
 const SidebarContext = createContext();
 
+export const useSidebar = () => useContext(SidebarContext);
+
 export const SidebarProvider = ({ children }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
 
-  const toggleSidebar = () => {
-    setCollapsed((prev) => !prev);
-  };
+  const toggleSidebar = () => setSidebarOpen(prev => !prev);
 
-  return (  
-    <SidebarContext.Provider value={{ collapsed, toggleSidebar }}>
+  return (
+    <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
       {children}
     </SidebarContext.Provider>
   );
 };
-
-// Custom hook for convenience
-export const useSidebar = () => { return  useContext(SidebarContext);}
