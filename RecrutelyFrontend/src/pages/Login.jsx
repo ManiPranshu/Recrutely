@@ -6,7 +6,7 @@ import google from "/assets/googlelogin.png"
 import facebook from "/assets/facebook.png"
 
 function Rectangle(){
-  return(
+  return(  
     <div className="rect">
        <h1 className="heading">Recrutely</h1>
     </div>
@@ -36,7 +36,7 @@ function SignInGrid(){
       <input type="password" placeholder="Password" className="userinput"/>
       <Link to="/forgot-password" className="forgot-link">
         Forgot password?
-      </Link>
+      </Link>   
       <button className="submit">Submit</button>
       <div className="register">
         <span>Don't have an account?</span>

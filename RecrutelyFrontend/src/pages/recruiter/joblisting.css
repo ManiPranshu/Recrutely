@@ -1,0 +1,167 @@
+.job-listing {
+  margin: 0 4vw;
+}
+
+.job-heading {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.job-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.job-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  height: 5vh;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 0 1em;
+  font-weight: 500;
+   background: #334E68;
+  color: white;
+  border: none;
+}
+
+.job-btn.primary {
+  background: #334E68;
+  color: white;
+  border: none;
+  height: 3vh;
+}
+
+.job-btn.primary:hover {
+  background: #466580;
+}
+
+.job-btn.outline {
+  background: white;
+  border: 1px solid #B2ABAB;
+  color: #334E68;
+  height: 3vh;
+}
+
+.job-post-link {
+  text-decoration: none;
+}
+
+.job-search {
+  width: 30vw;
+  height: 5vh;
+  border-radius: 0.8em;
+  border: 1px solid #B2ABAB;
+  padding-left: 1em;
+}
+
+.job-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em 5%;
+}
+
+.job-card {
+  width: 47.5%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #B2ABAB;
+  border-radius: 0.8em;
+  padding: 0.2em 1em 0.5em;
+  gap: 0.3em;
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-title {
+  font-size: 1.4em;
+  font-weight: 525;
+}
+
+.job-company {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+.job-content{
+  gap: .2em;
+  font-size: .875em;
+}
+
+.job-oneline {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.job-status {
+  text-align: center;
+  border-radius: 0.5em;
+  width: 4em;
+  padding: 0.2em 0;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.job-status.active {
+  background: #B2FABF;
+  color: #1b5e20;
+}
+
+.job-card-actions {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.job-icon-trash {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.job-icon-trash:hover {
+  transform: scale(1.1);
+}
+
+.pagination-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #ccc;
+  font-size: 0.95em;
+  color: #444;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 0.5em;
+}
+
+.pagination-controls button {
+  padding: 0.4em 0.75em;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 0.3em;
+}
+
+.pagination-controls button.active {
+  background: #334E68;
+  color: white;
+  border: none;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
