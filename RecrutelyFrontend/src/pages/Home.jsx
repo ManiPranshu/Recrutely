@@ -34,7 +34,7 @@ const Home = () => {
     Recrutely uses AI-driven insights to help companies find the right candidates faster, streamline interviews, and improve hiring outcomes — all in one place.
   </p>
   <div className="hero-buttons">
-    <Link to='/register'> <button className="cta-primary">Get Started</button></Link>
+    <Link to='/dashboard'> <button className="cta-primary">Get Started</button></Link>
 
     <Link to="https://www.youtube.com/"> <button className="cta-secondary">Watch Demo</button></Link>
   </div>
