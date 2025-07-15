@@ -12,15 +12,15 @@ import Applications from "./pages/candidate/Application";
 import JobDescription from "./pages/candidate/JobDescription";
 import JobListing from "./pages/recruiter/JobListing";
 import PostJob from "./pages/recruiter/PostJob";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <Router>
       <Routes>
-
-
+        <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
-        <Route path ="/login" element={<Login/>}/>
+        <Route path="/login" element={<Login />} />
 
         <Route
           path="/*"
@@ -28,24 +28,20 @@ function App() {
             <SidebarProvider>
               <Layout>
                 <Routes>
-                  <Route path="/jobs" element={<JobBoard/>} />
-                  <Route path="/rdashboard" element={<RecruiterDashboard/>} />
+                  <Route path="/jobs" element={<JobBoard />} />
+                  <Route path="/rdashboard" element={<RecruiterDashboard />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/profile" element={<ProfilePage />} />
-                 < Route path="/applicants" element={< ViewApplicants/>}/>
-                 < Route path="/application" element={< Applications/>}/>
-                 < Route path="/jobdesc" element={< JobDescription/>}/>
-                  < Route path="/joblisting" element={< JobListing/>}/> 
-                  <Route path="/postjob" element={< PostJob/>}/>
-
-
-
+                  <Route path="/applicants" element={<ViewApplicants />} />
+                  <Route path="/application" element={<Applications />} />
+                  <Route path="/jobdesc" element={<JobDescription />} />
+                  <Route path="/joblisting" element={<JobListing />} />
+                  <Route path="/postjob" element={<PostJob />} />
                 </Routes>
               </Layout>
             </SidebarProvider>
           }
         />
-
       </Routes>
     </Router>
   );
