@@ -62,6 +62,10 @@ const Applications = () => {
 
       <h3 className="history-heading">Application History</h3>
 
+      <div className="table-responsive">
+
+      
+
       <table className="applications-table">
         <thead>
           <tr>
@@ -93,6 +97,7 @@ const Applications = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

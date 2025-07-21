@@ -14,6 +14,7 @@ import JobListing from "./pages/recruiter/JobListing";
 import PostJob from "./pages/recruiter/PostJob";
 import Home from "./pages/Home";
 
+
 function App() {
   return (
     <Router>

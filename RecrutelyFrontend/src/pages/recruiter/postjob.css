@@ -7,13 +7,13 @@
   margin: 0 auto 1rem;
   padding: 1em;
   border-radius: 2vh;
-  border: 0.15vw solid #B2ABAB;
+  border: 0.1vw solid #B2ABAB;
   display: flex;
   flex-direction: column;
 }
 
 .rp-post-job-input,.rp-min-salary,.rp-max-salary,.rp-post-job-discript{
-  border: 0.15vw solid #B2ABAB;
+  border: 0.1vw solid #B2ABAB;
   border-radius: 1vh;
   font-size: 1rem;
   padding-left: 1rem;

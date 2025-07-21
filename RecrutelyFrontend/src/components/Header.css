@@ -7,3 +7,38 @@
 .profile:hover {
   transform: scale(1.05);
 }
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.hamburger-btn img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .welcome-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.85rem;
+  }
+}

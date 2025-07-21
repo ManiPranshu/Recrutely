@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./profile.css"
+// import "./profile.css"
 const Edugrid=()=>{
   // State
 const [showEdu, setShowEdu] = useState(false);

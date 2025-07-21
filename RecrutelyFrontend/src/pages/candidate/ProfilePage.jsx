@@ -90,8 +90,10 @@ const addEducation = (newEducation) => {
       <div className="section">
         <h3>Personal Information</h3>
         <div className="info-grid">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
+          <div className="p-info">
+            <input  className= "f-name" type="text" placeholder="First Name" />
+            <input className = "l-name" type="text" placeholder="Last Name" />
+          </div>
           <input type="email" placeholder="Email Address" />
           <input type="tel" placeholder="Phone Number" />
           <input type="text" placeholder="Location" />

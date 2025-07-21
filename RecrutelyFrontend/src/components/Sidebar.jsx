@@ -16,6 +16,13 @@ const Sidebar = () => {
   const { isSidebarOpen, toggleSidebar } = useSidebar();
 
   return (
+    <>
+  <div
+    className={`sidebar-overlay ${isSidebarOpen ? "active" : ""}`}
+    onClick={toggleSidebar}
+  ></div>
+
+
     <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
       <div className="arrow" onClick={toggleSidebar}>
         {isSidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}
@@ -65,6 +72,7 @@ const Sidebar = () => {
         <span>Logout</span>
       </div>
     </div>
+    </>
   );
 };
 

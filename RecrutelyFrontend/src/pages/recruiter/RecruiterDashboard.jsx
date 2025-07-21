@@ -246,6 +246,9 @@ export default function RecruiterDashboard() {
             {showAllShortlists ? "Show Less" : "View All >"}
           </button>
         </div>
+        <div className="shortlist-table-container">
+
+       
         <table className="shortlist-table">
           <thead>
             <tr>
@@ -278,6 +281,7 @@ export default function RecruiterDashboard() {
             ))}
           </tbody>
         </table>
+         </div>
       </div>
     </div>
   );

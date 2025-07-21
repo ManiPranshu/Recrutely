@@ -85,6 +85,16 @@
   gap: 1rem;
 }
 
+.p-info{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.f-name, .l-name {
+  flex: 1;
+  min-width: 150px;
+}
 .info-grid input {
   padding: 0.6rem;
   border: 1px solid #ccc;
