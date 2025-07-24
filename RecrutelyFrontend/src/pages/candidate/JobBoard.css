@@ -101,12 +101,27 @@
   padding: 0.3rem 1rem;
   font-size: 0.95rem;
 }
-
+/* 
 .c-job-desc {
   color: #222;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+} */
+
+.c-job-desc {
+  max-height: 4.5rem;         /* Adjust height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;  
+  line-clamp: 1;    /* Limit to 1 lines */
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+  color: #222;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
+
 
 .c-job-footer {
   display: flex;

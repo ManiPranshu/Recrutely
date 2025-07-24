@@ -1,68 +1,8 @@
 import React from "react";
 import "./RecruiterDashboard.css";
 import { FaBriefcase, FaUser, FaCalendarAlt, FaEye } from "react-icons/fa";
-import {useState} from "react";
-
-const stats = [
-  {
-    icon: <FaBriefcase />,
-    label: "Total Jobs",
-    value: 7,
-    sub: "4 new\nAcross all jobs",
-  },
-  {
-    icon: <FaUser />,
-    label: "Applicants",
-    value: 7,
-    sub: "4 new\nAcross all jobs",
-  },
-  {
-    icon: <FaCalendarAlt />,
-    label: "Pending Interview",
-    value: 3,
-    sub: "This Week\n5 scheduled, 3 to confirm",
-  },
-];
-
-const interviews = [
-  {
-    name: "Abhijeet Kumar",
-    role: "Backend Developer",
-    type: "Technical",
-    time: "Today, 2:00 PM - 3:00 PM",
-    meet: "Google Meet",
-    meetLink: "https://meet.google.com/landing",
-    avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
-  },
-    {
-    name: "Abhijeet Kumar",
-    role: "Backend Developer",
-    type: "Technical",
-    time: "Today, 2:00 PM - 3:00 PM",
-    meet: "Google Meet",
-    meetLink: "https://meet.google.com/landing",
-    avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
-  },
-    {
-    name: "Abhijeet Kumar",
-    role: "Backend Developer",
-    type: "Technical",
-    time: "Today, 2:00 PM - 3:00 PM",
-    meet: "Google Meet",
-    meetLink: "https://meet.google.com/landing",
-    avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
-  },
-    {
-    name: "Abhijeet Kumar",
-    role: "Backend Developer",
-    type: "Technical",
-    time: "Today, 2:00 PM - 3:00 PM",
-    meet: "Google Meet",
-    meetLink: "https://meet.google.com/landing",
-    avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
-  }
-  // Add more interviews as needed
-];
+import { useState } from "react";
+import { useEffect } from "react";
 
 const shortlists = [
   {
@@ -74,7 +14,7 @@ const shortlists = [
     status: "Pending",
     resume: "#",
   },
-   {
+  {
     name: "Abhijeet kumar",
     email: "abhijeet@example.com",
     role: "Frontend Developer",
@@ -83,7 +23,7 @@ const shortlists = [
     status: "Pending",
     resume: "#",
   },
-   {
+  {
     name: "Abhijeet kumar",
     email: "abhijeet@example.com",
     role: "Frontend Developer",
@@ -92,7 +32,7 @@ const shortlists = [
     status: "Pending",
     resume: "#",
   },
-   {
+  {
     name: "Abhijeet kumar",
     email: "abhijeet@example.com",
     role: "Frontend Developer",
@@ -177,15 +117,96 @@ const shortlists = [
 ];
 
 export default function RecruiterDashboard() {
-    const [showAllShortlists, setShowAllShortlists] = useState(false);
-    const shortlistRowsToShow = 2;
+  const [dashboardStats, setDashboardStats] = useState({
+    totalJobs: 0,
+  });
 
-    const displayedShortlists = showAllShortlists
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const res = await fetch(
+          "http://localhost:3000/api/jobs/dashboard-stats"
+        );
+        const data = await res.json();
+
+        if (data.success) {
+          setDashboardStats(data.stats);
+        }
+      } catch (error) {
+        console.error("Failed to fetch dashboard stats:", error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
+  const stats = [
+    {
+      icon: <FaBriefcase />,
+      label: "Total Jobs",
+      value: dashboardStats.totalJobs,
+      sub: "4 new\nAcross all jobs",
+    },
+    {
+      icon: <FaUser />,
+      label: "Applicants",
+      value: 7,
+      sub: "4 new\nAcross all jobs",
+    },
+    {
+      icon: <FaCalendarAlt />,
+      label: "Pending Interview",
+      value: 3,
+      sub: "This Week\n5 scheduled, 3 to confirm",
+    },
+  ];
+
+  const interviews = [
+    {
+      name: "Abhijeet Kumar",
+      role: "Backend Developer",
+      type: "Technical",
+      time: "Today, 2:00 PM - 3:00 PM",
+      meet: "Google Meet",
+      meetLink: "https://meet.google.com/landing",
+      avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
+    },
+    {
+      name: "Abhijeet Kumar",
+      role: "Backend Developer",
+      type: "Technical",
+      time: "Today, 2:00 PM - 3:00 PM",
+      meet: "Google Meet",
+      meetLink: "https://meet.google.com/landing",
+      avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
+    },
+    {
+      name: "Abhijeet Kumar",
+      role: "Backend Developer",
+      type: "Technical",
+      time: "Today, 2:00 PM - 3:00 PM",
+      meet: "Google Meet",
+      meetLink: "https://meet.google.com/landing",
+      avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
+    },
+    {
+      name: "Abhijeet Kumar",
+      role: "Backend Developer",
+      type: "Technical",
+      time: "Today, 2:00 PM - 3:00 PM",
+      meet: "Google Meet",
+      meetLink: "https://meet.google.com/landing",
+      avatar: "https://ui-avatars.com/api/?name=Abhijeet+Kumar",
+    },
+    // Add more interviews as needed
+  ];
+  const [showAllShortlists, setShowAllShortlists] = useState(false);
+  const shortlistRowsToShow = 2;
+
+  const displayedShortlists = showAllShortlists
     ? shortlists
     : shortlists.slice(0, shortlistRowsToShow);
 
-
-    
   return (
     <div className="recruiter-dashboard">
       {/* Stats */}
@@ -206,7 +227,9 @@ export default function RecruiterDashboard() {
       <div className="section">
         <div className="section-header">
           <h2>Upcoming Interviews</h2>
-          <a href="#" className="view-link">View Tracker &gt;</a>
+          <a href="#" className="view-link">
+            View Tracker &gt;
+          </a>
         </div>
         <div className="interviews-row">
           {interviews.map((iv, i) => (
@@ -222,7 +245,13 @@ export default function RecruiterDashboard() {
               <div className="interview-details">
                 <div>{iv.time}</div>
                 <div>
-                  <span role="img" aria-label="meet">📅</span> {iv.meet} <a href={iv.meetLink} className="join-link">Join</a>
+                  <span role="img" aria-label="meet">
+                    📅
+                  </span>{" "}
+                  {iv.meet}{" "}
+                  <a href={iv.meetLink} className="join-link">
+                    Join
+                  </a>
                 </div>
               </div>
               <div className="interview-actions">
@@ -235,12 +264,17 @@ export default function RecruiterDashboard() {
       </div>
 
       {/* Recent Shortlists */}
-     <div className="section">
+      <div className="section">
         <div className="section-header">
           <h2>Recent Shortlists</h2>
           <button
             className="view-link"
-            style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+            }}
             onClick={() => setShowAllShortlists((prev) => !prev)}
           >
             {showAllShortlists ? "Show Less" : "View All >"}
@@ -272,7 +306,9 @@ export default function RecruiterDashboard() {
                   <span className="status-pill">{s.status}</span>
                 </td>
                 <td>
-                  <a href={s.resume} className="resume-link"><FaEye /> View</a>
+                  <a href={s.resume} className="resume-link">
+                    <FaEye /> View
+                  </a>
                 </td>
               </tr>
             ))}

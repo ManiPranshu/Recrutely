@@ -15,7 +15,7 @@
 
 .job-title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 1000;
 }
 
 .company-name {
@@ -69,6 +69,7 @@
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
+  max-height: fit-content;
 }
 
 .company-logo {

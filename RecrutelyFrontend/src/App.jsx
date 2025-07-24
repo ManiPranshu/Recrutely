@@ -11,10 +11,12 @@ import JobBoard from "./pages/candidate/JobBoard";
 import Applications from "./pages/candidate/Application";
 import JobDescription from "./pages/candidate/JobDescription";
 import JobListing from "./pages/recruiter/JobListing";
-import PostJob from "./pages/recruiter/PostJob";
+import PostJob from "./pages/recruiter/postjob";
 import Home from "./pages/Home";
+import RecruiterProfile from "./pages/recruiter/RecruiterProfile";
 
 function App() {
+
   return (
     <Router>
       <Routes>
@@ -34,9 +36,14 @@ function App() {
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/applicants" element={<ViewApplicants />} />
                   <Route path="/application" element={<Applications />} />
-                  <Route path="/jobdesc" element={<JobDescription />} />
+                  {/* <Route path="/jobdesc" element={<JobDescription />} /> */}
+                  <Route path="/jobdesc/:id" element={<JobDescription />} />
+
+                  <Route path = "/rprofile" element={<RecruiterProfile />} />
                   <Route path="/joblisting" element={<JobListing />} />
                   <Route path="/postjob" element={<PostJob />} />
+                  <Route path="/postjob/:id" element={<PostJob />} /> {/* ← For editing */}
+
                 </Routes>
               </Layout>
             </SidebarProvider>
