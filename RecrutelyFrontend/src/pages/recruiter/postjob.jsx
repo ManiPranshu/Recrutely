@@ -176,7 +176,7 @@ const PostJob = () => {
         <div className="rp-salary-input-form">
           <input
             type="text"
-            placeholder="Min (e.g. 80000)"
+            placeholder="Min (e.g. $120)"
             className="rp-min-salary"
             value={minSalary}
             disabled={isViewOnly}
@@ -185,7 +185,7 @@ const PostJob = () => {
           <span style={{ color: "#B2ABAB" }}>-</span>
           <input
             type="text"
-            placeholder="Max (e.g. 100000)"
+            placeholder="Max (e.g. $200)"
             className="rp-max-salary"
             value={maxSalary}
             disabled={isViewOnly}

@@ -18,7 +18,7 @@ import JobDescription from "./pages/candidate/JobDescription";
 import RecruiterProfile from "./pages/recruiter/RecruiterProfile";
 import ViewApplicants from "./pages/recruiter/ViewApplicants";
 import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
-import JobListing from "./pages/recruiter/JobListing";
+import JobListing from "./pages/recruiter/Joblisting";
 import PostJob from "./pages/recruiter/postjob";
 
 

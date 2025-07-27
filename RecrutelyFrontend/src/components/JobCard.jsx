@@ -31,7 +31,7 @@ const JobCard = ({
 }) => {
   const navigate = useNavigate();
 
-   const handleClick = () => {
+  const handleClick = () => {
     navigate(`/employer/postjob/${jobId}`, { state: { viewOnly: true } });
   };
 
@@ -63,14 +63,23 @@ const JobCard = ({
 
       <div className="job-card-actions-wrapper">
         <div className="job-card-actions">
-          <button className="job-btn primary">
+          <button className="job-btn primary"
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent click from propagating to the card
+              navigate("/employer/applicants");
+            }}
+            style={{ cursor: "pointer" }}
+            >
             <FaEye size="1em" />
             View Applicants
           </button>
 
           <button
             className="job-btn outline"
-            onClick={onEdit}
+            onClick={(e) => {
+              e.stopPropagation();
+              onEdit();
+            }}
             style={{ cursor: "pointer" }}
           >
             <FaEdit size="1em" />
@@ -80,7 +89,10 @@ const JobCard = ({
           <FaTrash
             className="job-icon-trash"
             style={{ cursor: "pointer" }}
-            onClick={onDelete}
+            onClick={(e) => {
+              e.stopPropagation();
+              onDelete();
+            }}
           />
         </div>
       </div>
