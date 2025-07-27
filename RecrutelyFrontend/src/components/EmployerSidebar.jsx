@@ -1,6 +1,6 @@
 import React from "react";
-import "./Sidebar.css";
-import { useSidebar } from "../context/SidebarContext";
+import "./EmployerSidebar.css";
+import { useEmployerSidebar } from "../context/EmployerSidebarContext";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
   FaHome,
@@ -9,11 +9,18 @@ import {
   FaBriefcase,
   FaSignOutAlt,
 } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Sidebar = () => {
-  const { isSidebarOpen, toggleSidebar } = useSidebar();
+const EmployerSidebar = () => {
+  const { isSidebarOpen, toggleSidebar } = useEmployerSidebar();
+    const navigate = useNavigate();
+
+   const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
     <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
@@ -22,9 +29,9 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar-header">
-        <div className="avatar-circle">CD</div>
+        <div className="avatar-circle">ED</div>
         <div>
-          <h1 className="sidebar-title">Candidate</h1>
+          <h1 className="sidebar-title">Employer</h1>
           <p className="sidebar-subtitle">Dashboard</p>
         </div>
       </div>
@@ -34,38 +41,38 @@ const Sidebar = () => {
         <ul>
           <NavLink
             className="nav-item"
-            to="/candidate/dashboard"
+            to="/employer/rdashboard"
             activeClassName="active"
           >
             <FaHome className="nav-img-icon" />
             <span>Dashboard</span>
           </NavLink>
-          <NavLink className="nav-item" to="/candidate/profile" activeClassName="active">
+          <NavLink className="nav-item" to="/employer/rprofile" activeClassName="active">
             <FaUser className="nav-img-icon" />
             <span>Profile</span>
           </NavLink>
           <NavLink
             className="nav-item"
-            to="/candidate/application"
+            to="/employer/postjob"
             activeClassName="active"
           >
             <FaClipboardList className="nav-img-icon" />
-            <span>Applications</span>
+            <span>Post Job</span>
           </NavLink>
-          <NavLink className="nav-item" to="/candidate/jobs" activeClassName="active">
+          <NavLink className="nav-item" to="/employer/joblisting" activeClassName="active">
             <FaBriefcase className="nav-img-icon" />
-            <span>Jobs</span>
+            <span>Job Listing</span>
           </NavLink>
         </ul>
       </nav>
 
       {/* Logout */}
-      <div className="sidebar-footer">
-        <FaSignOutAlt className="nav-img-icon" />
+      <div className="sidebar-footer" onClick={handleLogout}>
+        <FaSignOutAlt className="nav-img-icon"   />
         <span>Logout</span>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default EmployerSidebar;

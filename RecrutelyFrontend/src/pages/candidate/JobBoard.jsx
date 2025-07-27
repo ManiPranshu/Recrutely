@@ -144,7 +144,7 @@ export default function JobBoard() {
                 Posted {new Date(job.posted_at).toDateString()}
               </span>
 
-             <Link to={`/jobdesc/${job.id}`}>
+             <Link to={`/candidate/jobdesc/${job.id}`}>
   <button className="c-apply-btn">Apply Now</button>
 </Link>
 

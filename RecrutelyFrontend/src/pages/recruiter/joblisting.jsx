@@ -18,7 +18,7 @@ const JobListing = () => {
 
 
 const handleEdit = (job) => {
-  navigate(`/postjob/${job.id}`);
+  navigate(`/employer/postjob/${job.id}`);
 };
 
 const handleUpdate = (updatedJob) => {
@@ -96,7 +96,7 @@ const handleUpdate = (updatedJob) => {
       </p>
 
       <div className="job-actions">
-        <Link to="/postjob" className="job-post-link">
+        <Link to="/employer/postjob" className="job-post-link">
           <button className="job-btn">+ Post a Job</button>
         </Link>
         <input

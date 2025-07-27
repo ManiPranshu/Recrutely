@@ -1,14 +1,14 @@
 .applications-container {
-  padding: 2rem;
+  /* padding: 2rem; */
   font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
+  /* background-color: #f8fafc; */
   color: #1e293b;
 }
 
 .applications-title {
-  font-size: 2rem;
+  /* font-size: 2rem; */
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .applications-subtitle {
@@ -25,9 +25,12 @@
 
 .applications-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-radius: 12px;
+  overflow: hidden;
   background-color: #fff;
   border: 1px solid #e2e8f0;
+  border-spacing:0;
 }
 
 .applications-table th,
@@ -36,6 +39,7 @@
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
   font-size: 1rem;
+  border-spacing: 0;
 }
 
 .job-cell {

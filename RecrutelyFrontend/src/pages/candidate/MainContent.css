@@ -1,11 +1,15 @@
 .main-content {
   padding: 2rem;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-
+.recommended-text {
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  font-weight: bold;
+}
 /* Container row for job cards */
 .job-row {
   display: flex;
@@ -59,7 +63,7 @@
 
 .apply-button {
   margin-top: 1rem;
-  background-color: #1e293b;
+  background-color: #334E68;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -70,7 +74,7 @@
 }
 
 .apply-button:hover {
-  background-color: #1e40af;
+  background-color: #41607d;
 }
 
 

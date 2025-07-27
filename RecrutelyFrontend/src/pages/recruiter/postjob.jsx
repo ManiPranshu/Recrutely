@@ -5,11 +5,13 @@ import "./postjob.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useParams } from "react-router-dom";
+import { useParams,useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-
 const PostJob = () => {
+  const loc = useLocation();
+  const isViewOnly = loc.state?.viewOnly || false;
+
   const [selectedType, setSelectedType] = useState("Remote");
   const [selectedJobType, setSelectedJobType] = useState("Full-Time");
   const [title, setTitle] = useState("");
@@ -26,42 +28,36 @@ const PostJob = () => {
 
   const { id } = useParams(); // Will be undefined for new job, or have job ID
   const isEditMode = Boolean(id);
-  
-
 
   useEffect(() => {
-  const fetchJobDetails = async () => {
-    if (!id) return;
+    const fetchJobDetails = async () => {
+      if (!id) return;
 
+      try {
+        const res = await fetch(`http://localhost:3000/api/jobs/${id}`);
+        const data = await res.json();
 
-    try {
-      const res = await fetch(`http://localhost:3000/api/jobs/${id}`);
-      const data = await res.json();
-
-      if (data.success) {
-        const job = data.job;
-        setTitle(job.title || "");
-        setSelectedType(job.work_mode || "Remote");
-        setSelectedJobType(job.job_type || "Full-Time");
-        setMinSalary(job.salary_min || "");
-        setMaxSalary(job.salary_max || "");
-        setLocation(job.location || "");
-        setResponsibilities(job.responsibilities || "");
-        setSkills(job.skills || "");
-        setPerks(job.perks || "");
-      } else {
-        toast.error("Failed to load job data.");
+        if (data.success) {
+          const job = data.job;
+          setTitle(job.title || "");
+          setSelectedType(job.work_mode || "Remote");
+          setSelectedJobType(job.job_type || "Full-Time");
+          setMinSalary(job.salary_min || "");
+          setMaxSalary(job.salary_max || "");
+          setLocation(job.location || "");
+          setResponsibilities(job.responsibilities || "");
+          setSkills(job.skills || "");
+          setPerks(job.perks || "");
+        } else {
+          toast.error("Failed to load job data.");
+        }
+      } catch (error) {
+        toast.error("Error loading job.");
       }
-    } catch (error) {
-      toast.error("Error loading job.");
-    }
-  };
+    };
 
-  fetchJobDetails();
-}, [id]);
-
-
-  
+    fetchJobDetails();
+  }, [id]);
 
   const resetForm = () => {
     setSelectedType("Remote");
@@ -75,53 +71,51 @@ const PostJob = () => {
     setPerks("");
   };
 
-  
-
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const jobData = {
-    title,
-    company: "Recrutely",
-    workMode: selectedType,
-    jobType: selectedJobType,
-    salaryMin: Number(minSalary),
-    salaryMax: Number(maxSalary),
-    location,
-    responsibilities,
-    skills,
-    perks,
-  };
+    const jobData = {
+      title,
+      company: "Recrutely",
+      workMode: selectedType,
+      jobType: selectedJobType,
+      salaryMin: Number(minSalary),
+      salaryMax: Number(maxSalary),
+      location,
+      responsibilities,
+      skills,
+      perks,
+    };
 
-  try {
-    const url = id
-      ? `http://localhost:3000/api/jobs/${id}` // If editing
-      : "http://localhost:3000/api/jobs/post-job"; // If creating
+    try {
+      const url = id
+        ? `http://localhost:3000/api/jobs/${id}` // If editing
+        : "http://localhost:3000/api/jobs/post-job"; // If creating
 
-    const method = id ? "PUT" : "POST";
+      const method = id ? "PUT" : "POST";
 
-    const res = await fetch(url, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(jobData),
-    });
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(jobData),
+      });
 
-    const result = await res.json();
+      const result = await res.json();
 
-    if (res.ok) {
-      toast.success(id ? "Job updated successfully!" : "🎉 Job posted!");
-       if(!id) resetForm(); // Clear form only for new job
-    } else {
-      toast.error(result?.error || "Something went wrong.");
+      if (res.ok) {
+        toast.success(id ? "Job updated successfully!" : "🎉 Job posted!");
+        if (!id) resetForm(); // Clear form only for new job
+      } else {
+        toast.error(result?.error || "Something went wrong.");
+      }
+    } catch (err) {
+      toast.error("Server error. Please try again.");
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (err) {
-    toast.error("Server error. Please try again.");
-    console.error(err);
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <>
@@ -140,6 +134,7 @@ const PostJob = () => {
           className="rp-post-job-input"
           placeholder="e.g. Senior Frontend Developer"
           value={title}
+          disabled={isViewOnly}
           onChange={(e) => setTitle(e.target.value)}
         />
 
@@ -152,6 +147,7 @@ const PostJob = () => {
                 selectedType === type ? "rp-active" : ""
               }`}
               onClick={() => setSelectedType(type)}
+              disabled={isViewOnly}
               type="button"
             >
               {type}
@@ -168,6 +164,7 @@ const PostJob = () => {
                 selectedJobType === type ? "rp-active" : ""
               }`}
               onClick={() => setSelectedJobType(type)}
+              disabled={isViewOnly}
               type="button"
             >
               {type}
@@ -182,6 +179,7 @@ const PostJob = () => {
             placeholder="Min (e.g. 80000)"
             className="rp-min-salary"
             value={minSalary}
+            disabled={isViewOnly}
             onChange={(e) => setMinSalary(e.target.value)}
           />
           <span style={{ color: "#B2ABAB" }}>-</span>
@@ -190,6 +188,7 @@ const PostJob = () => {
             placeholder="Max (e.g. 100000)"
             className="rp-max-salary"
             value={maxSalary}
+            disabled={isViewOnly}
             onChange={(e) => setMaxSalary(e.target.value)}
           />
         </div>
@@ -203,6 +202,7 @@ const PostJob = () => {
           className="rp-post-job-input"
           placeholder="e.g. NY"
           value={location}
+          disabled={isViewOnly}
           onChange={(e) => setLocation(e.target.value)}
         />
 
@@ -214,6 +214,7 @@ const PostJob = () => {
           className="rp-post-job-discript"
           placeholder="List key responsibilities and duties..."
           value={responsibilities}
+          disabled={isViewOnly}
           onChange={(e) => setResponsibilities(e.target.value)}
         ></textarea>
 
@@ -225,6 +226,7 @@ const PostJob = () => {
           className="rp-post-job-discript"
           placeholder="List required skills and qualifications..."
           value={skills}
+          disabled={isViewOnly}
           onChange={(e) => setSkills(e.target.value)}
         ></textarea>
 
@@ -236,39 +238,41 @@ const PostJob = () => {
           className="rp-post-job-discript"
           placeholder="List company perks and benefits..."
           value={perks}
+          disabled={isViewOnly}
           onChange={(e) => setPerks(e.target.value)}
         ></textarea>
 
-        <div className="rp-form-buttons">
-          <button
-            className="rp-btn rp-reset-btn"
-            type="button"
-            onClick={resetForm}
-          >
-            Reset
-          </button>
+        {!isViewOnly && (
+          <div className="rp-form-buttons">
+            <button
+              className="rp-btn rp-reset-btn"
+              type="button"
+              onClick={resetForm}
+            >
+              Reset
+            </button>
 
-          <button
-            className="rp-btn rp-post-btn"
-            onClick={handleSubmit}
-            type="submit"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              "Posting..."
-            ) : (
-              <>
-                <FaPaperPlane /> 
-               {isEditMode ? "Update Job" : "Post Job"}
-              </>
-            )}
-          </button>
-        </div>
+            <button
+              className="rp-btn rp-post-btn"
+              onClick={handleSubmit}
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                "Posting..."
+              ) : (
+                <>
+                  <FaPaperPlane />
+                  {isEditMode ? "Update Job" : "Post Job"}
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       <ToastContainer position="top-center" autoClose={3000} />
     </>
   );
 };
-
 export default PostJob;
