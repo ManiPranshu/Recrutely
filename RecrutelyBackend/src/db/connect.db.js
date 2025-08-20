@@ -1,11 +1,20 @@
 import pkg from "pg"
-
 const {Pool} = pkg;
 
-const pool = new Pool({
+// local
+// const pool = new Pool({
+// connectionString: process.env.DATABASE_URL
+// })
 
-connectionString: process.env.DATABASE_URL
-})
+
+
+// for aws
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 const connectedDb = async ()=>{
   try {

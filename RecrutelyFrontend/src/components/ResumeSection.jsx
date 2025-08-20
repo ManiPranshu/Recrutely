@@ -8,7 +8,7 @@ const ResumeSection = () => {
   const userId = user?.id; 
 
   useEffect(() => {
-    fetch(`http://localhost:5050/api/profile/resumes/${userId}`)
+    fetch(`http://localhost:3000/api/profile/resumes/${userId}`)
       .then((res) => res.json())
       .then((data) => setResumes(data))
       .catch((err) => console.error("Error fetching resumes:", err));
