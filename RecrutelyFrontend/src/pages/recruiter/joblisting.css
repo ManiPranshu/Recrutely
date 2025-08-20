@@ -1,4 +1,4 @@
-.job-listing {
+/* .job-listing {
   margin: 0 4vw;
 }
 
@@ -164,4 +164,252 @@
 .pagination-controls button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+} */
+/* Base Layout */
+.job-listing {
+  margin: 2em auto;
+  padding: 0 1em;
+  max-width: 1200px;
 }
+
+/* Heading */
+.job-heading {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* Actions Row */
+.job-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+/* Button */
+.job-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  font-size: 0.95em;
+  border: none;
+  transition: all 0.2s ease;
+  background:#334E68;
+  color: white;
+}
+.job-post-link{
+  text-decoration: none;
+}
+
+.job-btn.primary {
+  background-color: #334e68;
+  color: white;
+}
+
+.job-btn.primary:hover {
+  background-color: #466580;
+}
+
+.job-btn.outline {
+  background-color: white;
+  border: 1px solid #b2abab;
+  color: #334e68;
+}
+
+.job-btn.outline:hover {
+  background-color: #f3f3f3;
+}
+
+/* Search Field */
+.job-search {
+  flex-grow: 1;
+  max-width: 300px;
+  height: 40px;
+  padding: 0 1em;
+  border-radius: 0.5em;
+  border: 1px solid #b2abab;
+  font-size: 0.95em;
+}
+
+/* Grid */
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5em;
+}
+
+/* Card */
+.job-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1em;
+  padding: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Header */
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+/* Texts */
+.job-title {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.job-company {
+  font-size: 1em;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 0.75em;
+}
+
+.job-content {
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.job-oneline {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Status */
+.job-status {
+  border-radius: 0.5em;
+  padding: 0.2em 0.75em;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.job-status.active {
+  background-color: #b2fabf;
+  color: #1b5e20;
+}
+
+/* Actions */
+.job-card-actions-wrapper {
+  margin-top: auto;
+}
+
+.job-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+  align-items: center;
+}
+
+/* Trash icon */
+.job-icon-trash {
+  color: #a33;
+  font-size: 1.1em;
+  transition: transform 0.2s ease;
+}
+
+.job-icon-trash:hover {
+  transform: scale(1.2);
+}
+
+/* Pagination */
+.pagination-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid #ccc;
+  font-size: 0.95em;
+  color: #444;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 0.4em;
+}
+
+.pagination-controls button {
+  padding: 0.4em 0.75em;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 0.3em;
+  transition: background 0.2s ease;
+}
+
+.pagination-controls button:hover {
+  background: #eee;
+}
+
+.pagination-controls button.active {
+  background: #334e68;
+  color: white;
+  border: none;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media (max-width: 600px) {
+  .job-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .job-search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .job-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pagination-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    text-align: center;
+  }
+
+  .pagination-controls {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .job-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .job-card {
+    padding: 1em;
+  }
+}
+

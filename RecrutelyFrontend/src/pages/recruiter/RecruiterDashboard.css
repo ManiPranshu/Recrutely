@@ -1,7 +1,7 @@
-.recruiter-dashboard {
+/* .recruiter-dashboard {
   padding: 2vw 2vw;
   font-family: 'Inter', sans-serif;
-  background: #f8fafc;
+
 }
 
 .stats-row {
@@ -234,7 +234,7 @@
   font-weight: 500;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 900px) {
   .stats-row,
   .interviews-row {
@@ -252,12 +252,334 @@
     min-width: 40px;
     min-height: 40px;
   }
+} */
+ /* === FONT & GLOBAL STYLES === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #2563eb;
+  --color-primary-light: #e0f2fe;
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-surface: #ffffff;
+  --color-background: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-dark-ui: #334e68;
+  --color-pending: #a16207;
+  --color-pending-bg: #fef9c3;
+  --color-icon: #5da2eb;
+
+  /* Sizing & Spacing */
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1.2rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
-.shortlist-table-container {
-width: 100%;
-  overflow-x: auto;
+
+.recruiter-dashboard {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
 }
-table{
-   width: 100%;
+
+/* === STATS SECTION === */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  flex: 1 1 250px; /* Flex-grow, Flex-shrink, Flex-basis */
+}
+
+.stat-icon {
+  font-size: 2.25rem;
+  color: var(--color-icon);
+}
+
+.stat-info {
+  line-height: 1.4;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stat-sub {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  white-space: pre-line;
+}
+
+/* === GENERAL SECTION STYLES === */
+.section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.view-link {
+  color: var(--color-dark-ui);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+/* === INTERVIEWS SECTION === */
+.interviews-row {
+  display: flex;
+  gap: var(--spacing-lg);
+  overflow-x: auto; /* Keep horizontal scroll on this container */
+  padding-bottom: var(--spacing-md); /* Add padding for scrollbar */
+}
+
+/* Optional: Scrollbar styling */
+.interviews-row::-webkit-scrollbar {
+  height: 8px;
+}
+.interviews-row::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+.interviews-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.interview-card {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  min-width: 320px; /* Set a min-width for scrollable items */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.interview-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-icon);
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.candidate-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.candidate-role {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.interview-type {
+  margin-left: auto;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.interview-details p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.join-link {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+
+.interview-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+.btn-outline, .btn-primary {
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.btn-outline {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-dark-ui);
+}
+
+.btn-primary {
+  background: var(--color-dark-ui);
+  color: var(--color-surface);
+  border: none;
+}
+
+/* === SHORTLISTS TABLE SECTION (RESPONSIVE) === */
+.table-container {
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden; /* Important for border-radius */
+}
+
+.shortlist-table {
+  width: 100%;
   border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.shortlist-table th, .shortlist-table td {
+  padding: var(--spacing-md);
+  text-align: left;
+}
+
+.shortlist-table th {
+  background: #f1f5f9; /* A slightly different gray */
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.shortlist-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shortlist-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.candidate-email, .candidate-location {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.2rem;
+}
+
+.status-pill {
+  background: var(--color-pending-bg);
+  color: var(--color-pending);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.resume-link {
+  color: var(--color-icon);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+/* === MOBILE & TABLET RESPONSIVENESS === */
+@media (max-width: 768px) {
+  .recruiter-dashboard {
+    padding: var(--spacing-md);
+  }
+
+  /* Hide table header on mobile */
+  .shortlist-table thead {
+    display: none;
+  }
+  
+  /* Make table rows behave like cards */
+  .shortlist-table tr {
+    display: block;
+    margin-bottom: var(--spacing-md);
+    border-bottom: none; /* Remove default border */
+  }
+
+  /* Style each cell to be a full-width row */
+  .shortlist-table td {
+    display: block;
+    text-align: right; /* Align content to the right */
+    padding-left: 50%; /* Make space for the label */
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .shortlist-table td:last-child {
+      border-bottom: 0;
+  }
+
+  /* Use the data-label attribute for the label */
+  .shortlist-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: var(--spacing-md);
+    width: calc(50% - var(--spacing-lg));
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  /* Special handling for the first cell to look like a header */
+  .shortlist-table td[data-label="Candidate"] {
+    background-color: #f8fafc;
+    border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+  }
 }

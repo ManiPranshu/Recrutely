@@ -7,9 +7,11 @@ dotenv.config({
   path: './.env'
 })
 
+const PORT = process.env.PORT || 5000;
+
 connectedDb().then(()=>{
-  app.listen(process.env.PORT || 5000, ()=>{
-    console.log("app is listening on port: ",( process.env.PORT || 5000));
+  app.listen(PORT,'0.0.0.0', () => {
+    console.log("app is listening on port: ",PORT);
   })
 }).catch((err)=>{
   console.log("app is not listening. Err: ",err);

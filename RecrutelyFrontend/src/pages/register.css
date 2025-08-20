@@ -1,4 +1,4 @@
-.rectr {
+/* .rectr {
   height: 7.2vh;
   width: 60vw;
   border-radius: 2vh;
@@ -35,7 +35,7 @@
 
 }
 
-/* Google Register Button */
+
 .googler {
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@
   background-color: #f1f1f1;
 }
 
-/* Facebook Register Button */
+
 .facebookr {
   display: flex;
   align-items: center;
@@ -77,12 +77,6 @@
   background-color: #f1f1f1;
 }
 
-/* Optional: uniform image height */
-/* .googler img,
-.facebookr img {
-  height: 1.5rem;
-  width: auto;
-} */
 
 .dividerr {
   display: flex;
@@ -162,4 +156,199 @@
 
 .forgot-linkr {
   text-decoration: none;
+} */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+}
+
+.rectr {
+  width: 90vw;
+  max-width: 50rem;
+  height: 7vh;
+  border-radius: 1.5rem;
+  background: #334e68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4vh auto 2vh;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.headingr {
+  color: white;
+  font-size: 2rem;
+}
+
+.gridr {
+  width: 90vw;
+  max-width: 35rem;
+  background: white;
+  border-radius: 1.5rem;
+  border: 0.1rem solid #d1d5db;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  padding: 2rem;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.signinr {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #334e68;
+  margin-bottom: 1vh;
+}
+
+.userinputr {
+  width: 80%;
+  height: 5vh;
+  border: 0.1rem solid #b2abab;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.userinputr:focus {
+  border-color: #334e68;
+}
+
+.role-selectionr {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.role-box {
+  flex: 1;
+  min-width: 8rem;
+  text-align: center;
+  padding: 0.6rem 1.2rem;
+  border: 0.1rem solid #b2abab;
+  border-radius: 2rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.role-box.active,
+.role-box:hover {
+  background-color: #334e68;
+  color: white;
+  border-color: #334e68;
+}
+
+.submitr {
+  background-color: #334e68;
+  color: white;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  width: 40%;
+  min-width: 10rem;
+  height: 5.5vh;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.submitr:hover:not(:disabled) {
+  background-color: #22384d;
+  transform: translateY(-0.15rem);
+}
+
+.submitr:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dividerr {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 2vh 0;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.dividerr::before,
+.dividerr::after {
+  content: "";
+  flex: 1;
+  border-bottom: 0.1rem solid #d1d5db;
+}
+
+.dividerr:not(:empty)::before {
+  margin-right: 1rem;
+}
+
+.dividerr:not(:empty)::after {
+  margin-left: 1rem;
+}
+
+.googler,
+.facebookr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 80%;
+  height: 5.5vh;
+  border: 0.1rem solid #d1d5db;
+  border-radius: 2rem;
+  background-color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.googler:hover,
+.facebookr:hover {
+  background-color: #f3f4f6;
+}
+
+.registerr {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2vh;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.forgot-linkr {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.forgot-linkr:hover {
+  color: #312e81;
+}
+
+/* Responsive text size */
+@media (max-width: 600px) {
+  .headingr {
+    font-size: 1.8rem;
+  }
+
+  .signinr {
+    font-size: 2rem;
+  }
+
+  .registerr {
+    flex-direction: column;
+    text-align: center;
+  }
 }

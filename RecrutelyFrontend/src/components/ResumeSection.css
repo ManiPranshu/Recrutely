@@ -1,0 +1,134 @@
+.resume-section-pr {
+  margin-left: 1.2rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  max-width: 45vw;
+  width: 45%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.uploaded-resume-list-pr {
+  margin-top: 0.5rem;
+  max-height: 20vh; /* You can adjust this height as needed */
+  overflow-y: auto;
+  padding-right: 0.5rem; /* space for scrollbar */
+}
+
+/* Optional scrollbar styling (WebKit-based browsers only) */
+.uploaded-resume-list-pr::-webkit-scrollbar {
+  width: 6px;
+}
+
+.uploaded-resume-list-pr::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.label-pr {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.resume-file-pr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 0.05rem 0.2rem rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.resume-file-pr span {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.resume-file-pr a {
+  font-weight: 500;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.resume-file-pr a:hover {
+  text-decoration: underline;
+}
+
+.resume-meta-pr {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.resume-actions-pr {
+  margin-left: auto;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.resume-actions-pr button {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.resume-actions-pr button:hover {
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-section-pr {
+    max-width: 90vw;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .resume-file-pr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resume-actions-pr {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section-pr {
+    padding: 0.75rem;
+  }
+
+  .label-pr {
+    font-size: 0.9rem;
+  }
+
+  .resume-file-pr a {
+    font-size: 0.85rem;
+  }
+
+  .resume-meta-pr {
+    font-size: 0.75rem;
+  }
+
+  .resume-file-pr {
+    gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .resume-actions-pr button {
+    font-size: 1rem;
+  }
+}
